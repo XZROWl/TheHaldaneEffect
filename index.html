@@ -22,6 +22,7 @@
             text-align: center;
             display: flex;
             align-items: center;
+            justify-content: center; /* Center align items horizontally */
             max-width: 100%; /* Set max-width to 100% */
         }
         .logo {
@@ -34,15 +35,16 @@
         nav a {
             color: #fff;
             text-decoration: none;
-            padding: 8px; /* Decreased padding for navigation links */
-            margin-left: 10px; /* Decreased margin for navigation links */
-            font-size: 14px; /* Decreased font size for navigation links */
+            padding: 6px 10px; /* Decreased padding for navigation links */
+            margin: 0 5px; /* Decreased margin for navigation links */
+            font-size: 12px; /* Decreased font size for navigation links */
         }
         nav a:hover {
             background-color: #555;
         }
         section {
-            padding: 20px;
+            padding: 10px; /* Decreased padding for sections */
+            text-align: center; /* Center align text in sections */
         }
         .member {
             display: flex;
@@ -98,6 +100,22 @@
             font-size: 14px; /* Decreased font size for music description */
             margin: 0; /* Removed default margins for better spacing */
         }
+        .photos {
+            padding: 10px;
+            text-align: center;
+        }
+        .photo-slider {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            max-width: 100%;
+        }
+        .photo-slider img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
@@ -123,7 +141,7 @@
         <p>Tired of everything we hear on the radio? Yearning for the return of real music, albums, physical releases, proper followings of proper bands?</p>
         <p>This is what we are here to bring, we have more in stock with character, humor, and real people as your soundtrack. We're here to be all yours, your lawfully wedded band, The Haldane Effect.</p>
         <br>
-        <p style="font-size: 16px;">Meet the members:</p>
+        <p style="font-size: 14px;">Meet the members:</p>
 
         <div class="member">
             <img src="./images/member1.jpg" alt="Member 1">
@@ -166,21 +184,44 @@
         </div>
     </section>
 
+    <section id="photos">
+        <h2>Photos</h2>
+        <div class="photos">
+            <div class="photo-slider">
+                <img src="./images/photo1.jpg" alt="Photo 1">
+                <img src="./images/photo2.jpg" alt="Photo 2">
+                <img src="./images/photo3.jpg" alt="Photo 3">
+                <img src="./images/photo4.jpg" alt="Photo 4">
+                <img src="./images/photo5.jpg" alt="Photo 5">
+                <img src="./images/photo6.jpg" alt="Photo 6">
+                <img src="./images/photo7.jpg" alt="Photo 7">
+                <img src="./images/photo8.jpg" alt="Photo 8">
+                <img src="./images/photo9.jpg" alt="Photo 9">
+                <img src="./images/photo10.jpg" alt="Photo 10">
+                <img src="./images/photo11.jpg" alt="Photo 11">
+                <img src="./images/photo12.jpg" alt="Photo 12">
+                <img src="./images/photo13.jpg" alt="Photo 13">
+                <img src="./images/photo14.jpg" alt="Photo 14">
+                <img src="./images/photo15.jpg" alt="Photo 15">
+            </div>
+        </div>
+    </section>
+
     <section id="music">
         <h2>Our Music</h2>
         <div class="music">
             <a href="https://open.spotify.com/track/3JvnfgJqHVIasVk1TNJ4CI"><img src="./images/Ciac.jpg" alt="Christmas is a Conspiracy - 2023"></a>
-            <p style="font-size: 16px;">Christmas is a Conspiracy - 2023</p>
+            <p style="font-size: 14px;">Christmas is a Conspiracy - 2023</p>
         </div>
         <div class="music">
             <a href="https://open.spotify.com/track/0EiKlOpNRhertxUziTvGsG"><img src="./images/Forgotten.jpg" alt="Forgotten - 2023"></a>
-            <p style="font-size: 16px;">Forgotten - 2023</p>
+            <p style="font-size: 14px;">Forgotten - 2023</p>
         </div>
     </section>
 
     <section id="events">
         <h2>Upcoming Events:</h2>
-        <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-837856410077" style="color: white; text-decoration: none; font-size: 16px;">Gig Night at the Old Chemist - Saturday, February 24th</a></p>
+        <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-837856410077" style="color: white; text-decoration: none; font-size: 14px;">Gig Night at the Old Chemist - Saturday, February 24th</a></p>
     </section>
 
     <section id="contact">
@@ -196,5 +237,31 @@
         <a href="https://www.youtube.com/channel/UCpdP1RpYzWTalLq6zK6QXGA" style="font-size: 12px;">YouTube: The Haldane Effect</a>
         <a href="mailto:thehaldaneeffect@gmail.com" style="font-size: 12px;">Email: thehaldaneeffect@gmail.com</a>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.photo-slider img');
+        
+        function showSlide(index) {
+            if (index < 0) {
+                slideIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                slideIndex = 0;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex].style.display = 'inline-block';
+        }
+        
+        // Automatically advance slides every 5 seconds
+        setInterval(() => {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
+        }, 5000);
+    </script>
 </body>
 </html>
