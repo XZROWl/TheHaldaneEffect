@@ -1,0 +1,97 @@
+/* Styles for header */
+header {
+    background-color: #101028;
+    color: #F0DBAE;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+    margin-right: auto;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Styles for sections */
+section {
+    padding: 20px;
+    color: #F0DBAE;
+}
+
+.member img {
+    max-width: 350px;
+    transition: transform 0.3s;
+}
+
+.member img:hover {
+    transform: scale(1.05);
+}
+
+.music {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.music img {
+    max-width: 350px;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.music img:hover {
+    transform: scale(1.05);
+}
+
+.music p {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Styles for alert */
+.alert {
+    background-color: #FFA500;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styles for footer */
+footer {
+    background-color: #222;
+    color: #F0DBAE;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #F0DBAE;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Additional styles */
+body {
+    font-family: 'KoHo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #F0DBAE;
+    font-size: 16px;
+}
