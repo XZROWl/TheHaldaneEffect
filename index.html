@@ -111,7 +111,7 @@
             max-width: 100%;
         }
         .photo-slider img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
             display: inline-block;
             vertical-align: middle;
@@ -119,6 +119,17 @@
             cursor: pointer; 
         }
         .photo-slider img:hover {
+            transform: scale(1.05);
+        }
+        .photo-sliderb img {
+            max-width: 65%;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform 0.3s;
+            cursor: pointer; 
+        }
+        .photo-sliderb img:hover {
             transform: scale(1.05);
         }
     </style>
@@ -189,7 +200,7 @@
         </div>
         </div>
         <h2>Quote of the Week</h2>
-        <p>"When he gets in your house, him and your mum have a quick wrestle." - Oliver Kedziora (2023)</p>
+        <p>"Enigmatic, Sagadelic, Handsome, and Minion"</p>
         </div>
         </div>
         
@@ -234,7 +245,7 @@
         <h2>Events:</h2>
         <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-837856410077" style="color: white; text-decoration: none; font-size: 14px;">Gig Night at the Old Chemist - Saturday, February 24th</a></p>
         <div class="photos">
-            <div class="photo-slider">
+            <div class="photo-sliderb">
                 <img src="./images/oc41.JPG" alt="oc4" onclick="nextSlide()">
                 <img src="./images/oc3.JPG" alt="oc3" onclick="nextSlide()">
                 <img src="./images/oc2.JPG" alt="oc2" onclick="nextSlide()">
