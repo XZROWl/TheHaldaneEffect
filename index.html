@@ -242,11 +242,6 @@
         <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-837856410077" style="color: white; text-decoration: none; font-size: 14px;">Gig Night at the Old Chemist - Saturday, February 24th</a></p>
     </section>
 
-    <div class="photo-sliderb">
-        <img src="./images/oc4.JPG" alt="oc4" onclick="nextSlide()">
-        <img src="./images/oc3.JPG" alt="oc3" onclick="nextSlide()">
-        <img src="./images/oc2.JPG" alt="oc2" onclick="nextSlide()">
-        <img src="./images/oc1.JPG" alt="oc1" onclick="nextSlide()">
     </div>
 
     <section id="contact">
@@ -263,59 +258,36 @@
         <a href="mailto:thehaldaneeffect@gmail.com" style="font-size: 12px;">Email: thehaldaneeffect@gmail.com</a>
     </footer>
 
-   <script>
-    let slideIndexA = 0;
-    const slidesA = document.querySelectorAll('.photo-slider img');
+  <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.photo-slider img');
 
-    function showSlideA(index) {
-        if (index < 0) {
-            slideIndexA = slidesA.length - 1;
-        } else if (index >= slidesA.length) {
-            slideIndexA = 0;
+        function showSlide(index) {
+            if (index < 0) {
+                slideIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                slideIndex = 0;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex].style.display = 'inline-block';
         }
-        for (let i = 0; i < slidesA.length; i++) {
-            slidesA[i].style.display = 'none';
+
+        // Function to go to the next slide
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
         }
-        slidesA[slideIndexA].style.display = 'inline-block';
-    }
 
-    // Function to go to the next slide for slider A
-    function nextSlideA() {
-        slideIndexA++;
-        if (slideIndexA >= slidesA.length) {
-            slideIndexA = 0;
-        }
-        showSlideA(slideIndexA);
-    }
-
-    // Automatically advance slides for slider A every 5 seconds
-    setInterval(nextSlideA, 5000);
-
-    let slideIndexB = 0;
-    const slidesB = document.querySelectorAll('.photo-sliderb img');
-
-    function showSlideB(index) {
-        if (index < 0) {
-            slideIndexB = slidesB.length - 1;
-        } else if (index >= slidesB.length) {
-            slideIndexB = 0;
-        }
-        for (let i = 0; i < slidesB.length; i++) {
-            slidesB[i].style.display = 'none';
-        }
-        slidesB[slideIndexB].style.display = 'inline-block';
-    }
-
-    // Function to go to the next slide for slider B
-    function nextSlideB() {
-        slideIndexB++;
-        if (slideIndexB >= slidesB.length) {
-            slideIndexB = 0;
-        }
-        showSlideB(slideIndexB);
-    }
-
-    // Automatically advance slides for slider B every 5 sec
+        // Automatically advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
 
 </body>
 </html>
