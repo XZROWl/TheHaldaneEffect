@@ -297,6 +297,32 @@
     </script>
 </body>
 </html>
+<script>
+    let slideIndexb = 0;
+    const slidesb = document.querySelectorAll('.photo-sliderb img');
+
+    function showSlideb(index) {
+        if (index < 0) {
+            slideIndexb = slidesb.length - 1;
+        } else if (index >= slidesb.length) {
+            slideIndexb = 0;
+        }
+        for (let i = 0; i < slidesb.length; i++) {
+            slidesb[i].style.display = 'none';
+        }
+        slidesb[slideIndexb].style.display = 'inline-block';
+    }
+
+    function nextSlideb() {
+        slideIndexb++;
+        if (slideIndexb >= slidesb.length) {
+            slideIndexb = 0;
+        }
+        showSlideb(slideIndexb);
+    }
+
+    setInterval(nextSlideb, 5000);
+</script>
 
 </body>
 </html>
