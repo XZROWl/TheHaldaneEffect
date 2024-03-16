@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,132 +9,155 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .photo-slider img:not(:first-child),
-    .photo-sliderb img:not(:first-child) {
-    display: none;
-    }
+        .photo-sliderb img:not(:first-child) {
+            display: none;
+        }
+
         body {
             font-family: 'KoHo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #333; 
-            color: #F0DBAE; 
-            font-size: 16px; 
+            background-color: #333;
+            color: #F0DBAE;
+            font-size: 16px;
         }
+
         header {
             background-color: #101028;
             color: #F0DBAE;
-            padding: 10px; 
+            padding: 10px;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 100%; 
+            max-width: 100%;
         }
+
         .logo {
-            max-width: 120px; 
+            max-width: 120px;
             margin-right: auto;
         }
+
         nav {
             margin-left: auto;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
-            padding: 6px 10px; 
+            padding: 6px 10px;
             margin: 0 5px;
             font-size: 12px;
         }
+
         nav a:hover {
             background-color: #555;
         }
+
         section {
-            padding: 10px; 
-            text-align: center; 
+            padding: 10px;
+            text-align: center;
         }
+
         .member {
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
-            gap: 10px; 
+            gap: 10px;
             margin-bottom: 20px;
         }
+
         .member img {
-            max-width:90%;
-            height: auto; 
-            transition: transform 0.3s; 
+            max-width: 90%;
+            height: auto;
+            transition: transform 0.3s;
         }
+
         .member img:hover {
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
+
         .alert {
             background-color: #FFA500;
             color: white;
             padding: 10px;
             text-align: center;
-            font-size: 14px; 
+            font-size: 14px;
         }
+
         footer {
             background-color: #222;
             color: #F0DBAE;
             text-align: center;
-            padding: 10px; 
-            max-width: 100%; 
+            padding: 10px;
+            max-width: 100%;
         }
+
         footer a {
             color: #F0DBAE;
             text-decoration: none;
-            margin: 0 5px; 
-            font-size: 12px; 
+            margin: 0 5px;
+            font-size: 12px;
         }
+
         .music {
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .music img {
-            max-width: 100%; 
+            max-width: 100%;
             height: auto;
-            margin-bottom: 10px; 
-            transition: transform 0.3s; 
+            margin-bottom: 10px;
+            transition: transform 0.3s;
         }
+
         .music img:hover {
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
+
         .photos {
             padding: 10px;
             text-align: center;
         }
+
         .photo-slider {
             overflow: hidden;
             white-space: nowrap;
             width: 100%;
             max-width: 100%;
         }
+
         .photo-slider img {
             max-width: 90%;
             height: auto;
             display: inline-block;
             vertical-align: middle;
             transition: transform 0.3s;
-            cursor: pointer; 
+            cursor: pointer;
         }
+
         .photo-slider img:hover {
             transform: scale(1.05);
         }
+
         .photo-sliderb img {
             max-width: 90%;
             height: auto;
             display: inline-block;
             vertical-align: middle;
             transition: transform 0.3s;
-            cursor: pointer; 
+            cursor: pointer;
         }
+
         .photo-sliderb img:hover {
             transform: scale(1.05);
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -145,6 +169,10 @@
         <a href="#contact">Contact</a>
     </nav>
 </header>
+
+<div class="alert">
+    Gig night at the OC - 23rd March 2024. <a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-863987689437?aff=oddtdtcreator&utm_campaign=postpublish&utm_medium=sparkpost&utm_source=email" style="color: white; text-decoration: underline;">Get Tickets</a>
+</div>
 
 <section id="about">
     <h2>About Us</h2>
@@ -195,8 +223,8 @@
         </div>
     </div>
     <h2>Quote of the Week</h2>
-    <p id="currentQuote">"Why would i be the bottom, that's disgusting. Of course I'm the top" -  Ben Bartlett, Mar 2nd 2024</p>
-    <p id="nextQuote" style="display:none;">"Why would i be the bottom, that's disgusting. Of course I'm the top" -  Ben Bartlett, Mar 2nd 2024</p>
+    <p id="currentQuote">"Why would i be the bottom, that's disgusting. Of course I'm the top" - Ben Bartlett, Mar 2nd 2024</p>
+    <p id="nextQuote" style="display:none;">"Why would i be the bottom, that's disgusting. Of course I'm the top" - Ben Bartlett, Mar 2nd 2024</p>
     <p id="countdown"></p>
 </section>
 
@@ -242,7 +270,7 @@
 
 <section id="events">
     <h2>Events:</h2
-    <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-863987689437?aff=oddtdtcreator&utm_campaign=postpublish&utm_medium=sparkpost&utm_source=email" style="color: white; text-decoration: none; font-size: 14px;">Gig Night at the Old Chemist - Saturday, March 23rd</a></p>               
+    <p><a href="https://www.eventbrite.co.uk/e/gig-night-at-the-oc-tickets-863987689437?aff=oddtdtcreator&utm_campaign=postpublish&utm_medium=sparkpost&utm_source=email" style="color: white; text-decoration: none; font-size: 14px;">Gig Night at the Old Chemist - Saturday, March 23rd</a></p>
     <div class="photo-sliderb">
         <img src="./images/oc1.JPG" alt="Photo 16" onclick="nextSlideb()">
         <img src="./images/oc2.JPG" alt="Photo 17" onclick="nextSlideb()">
@@ -279,6 +307,7 @@
         }
         slides[slideIndex].style.display = 'inline-block';
     }
+
     function nextSlide() {
         slideIndex++;
         if (slideIndex >= slides.length) {
@@ -349,10 +378,6 @@
     calculateCountdown();
 </script>
 
-
 </body>
-</html>
 
-
-</body>
 </html>
