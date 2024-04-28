@@ -171,9 +171,7 @@
             <a href="https://www.instagram.com/kstrupiechowski?igsh=bTVkbTRjcG95eTNl"><img src="./images/instagram.png" alt="Instagram" style="width: 20px;"></a>
         </div>
     </div>
-    <h2>Quote of the Week</h2>"..." - Kacper Strupiechowskie, all day every day</p>
-    <p id="nextQuote" style="display:none;">"..." - Kacper Strupiechowskie, all day every day</p>
-    <p id="countdown"></p>
+    <h2>Quote of the Week</h2>"Got some Grub?" - Zakk White, 25th April</p>
 </section>
 
 
@@ -210,90 +208,7 @@
 </footer>
 
 <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.photo-slider img');
-
-    function showSlide(index) {
-        if (index < 0) {
-            slideIndex = slides.length - 1;
-        } else if (index >= slides.length) {
-            slideIndex = 0;
-        }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
-        }
-        slides[slideIndex].style.display = 'inline-block';
-    }
-
-    function nextSlide() {
-        slideIndex++;
-        if (slideIndex >= slides.length) {
-            slideIndex = 0;
-        }
-        showSlide(slideIndex);
-    }
-
-    setInterval(nextSlide, 5000);
-</script>
-
-<script>
-    let slideIndexb = 0;
-    const slidesb = document.querySelectorAll('.photo-sliderb img');
-
-    function showSlideb(index) {
-        if (index < 0) {
-            slideIndexb = slidesb.length - 1;
-        } else if (index >= slidesb.length) {
-            slideIndexb = 0;
-        }
-        for (let i = 0; i < slidesb.length; i++) {
-            slidesb[i].style.display = 'none';
-        }
-        slidesb[slideIndexb].style.display = 'inline-block';
-    }
-
-    function nextSlideb() {
-        slideIndexb++;
-        if (slideIndexb >= slidesb.length) {
-            slideIndexb = 0;
-        }
-        showSlideb(slideIndexb);
-    }
-
-    setInterval(nextSlideb, 5000);
-</script>
-
-<script>
-    function calculateCountdown() {
-        var now = new Date();
-        var gmtNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
-
-        var daysUntilSaturday = 6 - gmtNow.getUTCDay();
-        if (daysUntilSaturday <= 0) {
-            daysUntilSaturday += 7;
-        }
-
-        var remainingSeconds = (daysUntilSaturday * 24 * 3600) - ((gmtNow.getUTCHours() * 3600) + (gmtNow.getUTCMinutes() * 60) + gmtNow.getUTCSeconds());
-        var remainingDays = Math.floor(remainingSeconds / (24 * 3600));
-        var remainingHours = Math.floor((remainingSeconds % (24 * 3600)) / 3600);
-        var remainingMinutes = Math.floor((remainingSeconds % 3600) / 60);
-        var remainingSeconds = remainingSeconds % 60;
-
-        document.getElementById('countdown').innerHTML = 'Next Weekly Quote in: ' + remainingDays + ' days, ' + remainingHours + ' hours, ' + remainingMinutes + ' minutes, ' + remainingSeconds + ' seconds';
-
-        if (remainingSeconds <= 60 * 60 * 24 && remainingSeconds > 0) { // Check if it's between mid-day Saturday and mid-day Sunday
-            document.getElementById('nextQuote').style.display = 'block';
-            document.getElementById('currentQuote').style.display = 'none';
-        } else {
-            document.getElementById('nextQuote').style.display = 'none';
-            document.getElementById('currentQuote').style.display = 'block';
-        }
-    }
-
-    setInterval(calculateCountdown, 1000);
-
-    calculateCountdown();
-</script>
+    
 
 </body>
 
