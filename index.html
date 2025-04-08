@@ -14,15 +14,22 @@
       --accent: rgba(255, 200, 255, 0.1);
     }
 
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
       font-family: 'KoHo', sans-serif;
       background: linear-gradient(145deg, var(--bg1), var(--bg2));
       background-size: 400% 400%;
       animation: gradientShift 90s ease infinite;
       color: var(--text);
       font-size: 16px;
+      overflow-x: hidden;
     }
 
     @keyframes gradientShift {
@@ -32,31 +39,43 @@
 
     .container {
       width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
+      padding: 0 5vw;
     }
 
     header {
+      width: 100%;
       background: rgba(20, 20, 40, 0.9);
       color: var(--highlight);
-      padding: 40px 20px;
-      text-align: center;
+      padding: 30px 5vw;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: center;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .logo {
-      max-width: 160px;
+      max-width: 150px;
       border-radius: 10px;
+    }
+
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav a {
       color: var(--text);
       text-decoration: none;
-      padding: 10px 15px;
-      margin-left: 20px;
+      padding: 8px 12px;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
@@ -66,10 +85,10 @@
     }
 
     section {
-      padding: 100px 20px;
+      padding: 80px 0;
       text-align: center;
-      position: relative;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
     }
 
     section h2 {
@@ -86,29 +105,23 @@
     }
 
     .slider-wrapper {
-      overflow: hidden;
-      margin-top: 40px;
+      overflow-x: auto;
       padding-bottom: 20px;
     }
 
     .slider {
       display: flex;
-      gap: 40px;
+      gap: 20px;
       padding: 30px 10px;
-      animation: scrollLeft 60s linear infinite;
-    }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      width: max-content;
     }
 
     .member {
       flex: 0 0 auto;
-      width: 340px;
+      width: 300px;
       background: var(--accent);
       border-radius: 20px;
-      padding: 25px;
+      padding: 20px;
       backdrop-filter: blur(12px);
       box-shadow: 0 0 40px rgba(150, 150, 255, 0.1);
       transition: transform 0.4s ease;
@@ -127,11 +140,16 @@
 
     .member-info h3 {
       margin: 10px 0 5px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
+    }
+
+    .music {
+      margin-bottom: 40px;
     }
 
     .music img {
-      width: 320px;
+      width: 90%;
+      max-width: 320px;
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(180, 160, 255, 0.2);
       transition: transform 0.5s, box-shadow 0.5s;
@@ -140,10 +158,6 @@
     .music img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
-    }
-
-    .music {
-      margin-bottom: 50px;
     }
 
     .fade-in {
@@ -161,7 +175,8 @@
       background-color: #12121f;
       color: #ccc;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 5vw;
+      width: 100%;
     }
 
     footer a {
@@ -174,10 +189,60 @@
     footer a:hover {
       color: var(--highlight);
     }
+
+    /* 📱 Responsive Styles */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .slider {
+        flex-wrap: nowrap;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      section p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      .member {
+        width: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .music img {
+        width: 100%;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .member {
+        width: 230px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- HEADER + NAVIGATION -->
     <header>
       <img src="./images/Logo.jpg" alt="The Haldane Effect Logo" class="logo" />
       <nav>
@@ -189,55 +254,26 @@
       </nav>
     </header>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="fade-in">
       <h2>About Us</h2>
       <p>Welcome to the official website of The Haldane Effect, a Southampton-based indie band with a sound that's uniquely ours.</p>
       <p>We draw from countless influences, yet what we create feels like home—dreamy, honest, loud and tender.</p>
-      <p>Our debut album *Kookbox* is out now. It’s yours if you want it. Let’s make noise together.</p>
+      <p>Our debut album <em>Kookbox</em> is out now. It’s yours if you want it. Let’s make noise together.</p>
       <p style="font-size: 14px;">Meet the members:</p>
-
-      <div class="slider-wrapper" onmouseenter="pauseSlider()" onmouseleave="resumeSlider()">
-        <div class="slider" id="memberSlider">
-          <!-- Member cards -->
-          <div class="member">
-            <img src="./images/member1.jpg" alt="Oliver Kedziora" />
-            <div class="member-info">
-              <h3>Oliver Kedziora</h3>
-              <p>Lead Vocals / Rhythm Guitar</p>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./images/member2.jpg" alt="Evelyn Eales" />
-            <div class="member-info">
-              <h3>Evelyn Eales</h3>
-              <p>Lead Guitar</p>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./images/member3.jpg" alt="Daniels Mareckis" />
-            <div class="member-info">
-              <h3>Daniels Mareckis</h3>
-              <p>Bass Guitar</p>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./images/IMG506.jpg" alt="Zakk White" />
-            <div class="member-info">
-              <h3>Zakk White</h3>
-              <p>Synthesizer / Texture Guitar</p>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./images/member4.jpg" alt="Kacper Strupiechowski" />
-            <div class="member-info">
-              <h3>Kacper Strupiechowski</h3>
-              <p>Drums</p>
-            </div>
-          </div>
+      <div class="slider-wrapper">
+        <div class="slider">
+          <!-- MEMBER CARDS -->
+          <div class="member"><img src="./images/member1.jpg" alt="Oliver Kedziora" /><div class="member-info"><h3>Oliver Kedziora</h3><p>Lead Vocals / Rhythm Guitar</p></div></div>
+          <div class="member"><img src="./images/member2.jpg" alt="Evelyn Eales" /><div class="member-info"><h3>Evelyn Eales</h3><p>Lead Guitar</p></div></div>
+          <div class="member"><img src="./images/member3.jpg" alt="Daniels Mareckis" /><div class="member-info"><h3>Daniels Mareckis</h3><p>Bass Guitar</p></div></div>
+          <div class="member"><img src="./images/IMG506.jpg" alt="Zakk White" /><div class="member-info"><h3>Zakk White</h3><p>Synthesizer / Texture Guitar</p></div></div>
+          <div class="member"><img src="./images/member4.jpg" alt="Kacper Strupiechowski" /><div class="member-info"><h3>Kacper Strupiechowski</h3><p>Drums</p></div></div>
         </div>
       </div>
     </section>
 
+    <!-- MUSIC SECTION -->
     <section id="music" class="fade-in">
       <h2>Our Music</h2>
       <div class="music"><a href="https://open.spotify.com/album/1E582osqq3u3ivDno5omJZ" target="_blank"><img src="./images/Kookbox.jpg" alt="Kookbox Album Cover"></a><p>Kookbox - Album - 2024</p></div>
@@ -248,22 +284,26 @@
       <div class="music"><a href="https://open.spotify.com/track/3JvnfgJqHVIasVk1TNJ4CI" target="_blank"><img src="./images/Forgotten.jpg" alt="Forgotten Single Cover"></a><p>Forgotten - Single - 2023</p></div>
     </section>
 
+    <!-- EVENTS -->
     <section id="events" class="fade-in">
       <h2>Upcoming Events</h2>
       <p>Nothing upcoming as of yet... but stay tuned. We’re just getting started.</p>
     </section>
 
+    <!-- MERCH -->
     <section id="Merchandise" class="fade-in">
       <h2>Merchandise</h2>
       <p>Kookbox CDs</p>
       <a href="https://thehaldaneeffect.bandcamp.com/album/kookbox" target="_blank">Available now on Bandcamp</a>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="fade-in">
       <h2>Contact Us</h2>
       <p>Booking, press, or just want to say hi? Drop us a line. We’re always listening.</p>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <a href="https://www.instagram.com/thehaldaneeffect" target="_blank">Instagram</a>
       <a href="https://www.tiktok.com/@thehaldaneeffect" target="_blank">TikTok</a>
