@@ -158,8 +158,37 @@
             margin: 0 5px;
             font-size: 12px;
         }
+        
     </style>
 </head>
+    
+<script>
+    const slider = document.getElementById('memberSlider');
+    let isPaused = false;
+
+    function cloneSliderContent() {
+        slider.innerHTML += slider.innerHTML; // duplicate for infinite loop
+    }
+
+    function autoScroll() {
+        if (isPaused) return;
+        slider.scrollLeft += 1;
+        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+            slider.scrollLeft = 0;
+        }
+    }
+
+    function pauseSlider() {
+        isPaused = true;
+    }
+
+    function resumeSlider() {
+        isPaused = false;
+    }
+
+    cloneSliderContent(); // clone once on load
+    setInterval(autoScroll, 30); // slow scroll speed
+</script>
 
 <body>
     <div class="container">
