@@ -1,19 +1,38 @@
-/* Styles for header */
+html, body {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'KoHo', sans-serif;
+    background: linear-gradient(145deg, #0a0a0a, #1f1f2e);
+    background-size: 400% 400%;
+    animation: gradientShift 60s ease infinite;
+    color: #dcd6f7;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
 
-html, body, { 
-        position:fixed; 
-        top:0; 
-        bottom:0; 
-        left:0; 
-        right:0; 
-    } 
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 header {
     background-color: #101028;
     color: #F0DBAE;
     padding: 20px;
-    text-align: center;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 .logo {
@@ -36,70 +55,94 @@ nav a:hover {
     background-color: #555;
 }
 
-/* Styles for sections */
+/* Sections */
 section {
     padding: 20px;
     color: #F0DBAE;
+    text-align: center;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.member {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 300px;
+    background: rgba(100, 100, 150, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(200, 200, 255, 0.2);
 }
 
 .member img {
-    max-width: 350px;
-    transition: transform 0.3s;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .member img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
 }
 
+.member-info h3 {
+    margin: 10px 0 5px;
+}
+
+.member-info a img {
+    width: 20px;
+}
+
+/* Music */
 .music {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .music img {
-    max-width: 350px;
-    margin-right: 20px;
-    transition: transform 0.3s;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(180, 160, 255, 0.2);
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .music img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
 }
 
-.music p {
-    font-size: 24px;
-    margin: 0;
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* Styles for alert */
-.alert {
-    background-color: #FFA500;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Styles for footer */
+/* Footer */
 footer {
-    background-color: #222;
-    color: #F0DBAE;
+    background-color: #1b1b2f;
+    color: #f3e8ff;
     text-align: center;
     padding: 20px;
 }
 
 footer a {
-    color: #F0DBAE;
+    color: #f3e8ff;
     text-decoration: none;
-    margin: 0 10px;
-}
-
-/* Additional styles */
-body {
-    font-family: 'KoHo', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-    color: #F0DBAE;
-    font-size: 16px;
+    margin: 0 5px;
+    font-size: 12px;
 }
