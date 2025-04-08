@@ -64,11 +64,18 @@ section {
 
 .slider {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 20px;
     padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+    animation: autoScroll 20s linear infinite;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
 }
 
 .member {
