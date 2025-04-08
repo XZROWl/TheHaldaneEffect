@@ -7,10 +7,9 @@ html, body {
     animation: gradientShift 60s ease infinite;
     color: #dcd6f7;
     font-size: 16px;
-    display: flex;
-    justify-content: center;
     min-height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 @keyframes gradientShift {
@@ -24,7 +23,9 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-    min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -62,6 +63,11 @@ section {
     text-align: center;
 }
 
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
 .slider {
     display: flex;
     gap: 20px;
@@ -69,13 +75,12 @@ section {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-    animation: autoScroll 20s linear infinite;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .slider::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    display: none;
 }
 
 .member {
@@ -143,6 +148,7 @@ footer {
     color: #f3e8ff;
     text-align: center;
     padding: 20px;
+    margin-top: auto;
 }
 
 footer a {
