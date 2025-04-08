@@ -96,16 +96,17 @@
     }
 
     .member {
-      flex: 0 0 auto;
-      scroll-snap-align: center;
-      width: 300px;
-      background: rgba(100, 100, 150, 0.1);
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 15px rgba(200, 200, 255, 0.2);
-    }
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 400px; /* or even 450px if you want them bigger */
+  background: rgba(100, 100, 150, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(200, 200, 255, 0.3);
+  transition: transform 0.3s ease;
+}
 
     .member img {
       width: 100%;
