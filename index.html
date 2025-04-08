@@ -2,352 +2,305 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>The Haldane Effect - Official Website</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap">
-    <style>
-        html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'KoHo', sans-serif;
-    background: linear-gradient(145deg, #0a0a0a, #1f1f2e);
-    background-size: 400% 400%;
-    animation: gradientShift 60s ease infinite;
-    color: #dcd6f7;
-    font-size: 16px;
-    @keyframes autoScroll {
-    0% {
-        transform: translateX(0);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>The Haldane Effect - Official Website</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'KoHo', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a, #1f1f2e);
+      background-size: 400% 400%;
+      animation: gradientShift 60s ease infinite;
+      color: #dcd6f7;
+      font-size: 16px;
     }
-    100% {
-        transform: translateX(-50%);
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
-}
 
-}
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    header {
+      background-color: #101028;
+      color: #F0DBAE;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
 
-        header {
-            background-color: #101028;
-            color: #F0DBAE;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-        }
+    .logo {
+      max-width: 150px;
+      margin-right: auto;
+    }
 
-        .logo {
-            max-width: 150px;
-            margin-right: auto;
-        }
+    nav {
+      margin-left: auto;
+    }
 
-        nav {
-            margin-left: auto;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      margin-left: 20px;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-            margin-left: 20px;
-        }
+    nav a:hover {
+      background-color: #555;
+    }
 
-        nav a:hover {
-            background-color: #555;
-        }
+    section {
+      padding: 20px;
+      color: #F0DBAE;
+      text-align: center;
+    }
 
-        section {
-            padding: 20px;
-            color: #F0DBAE;
-            text-align: center;
-        }
+    .slider-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
 
-        .slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 20px;
-            scroll-behavior: smooth;
-        }
+    .slider {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
 
-        .member {
-            flex: 0 0 auto;
-            scroll-snap-align: center;
-            width: 300px;
-            background: rgba(100, 100, 150, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(200, 200, 255, 0.2);
-        }
+    .member {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 300px;
+      background: rgba(100, 100, 150, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(200, 200, 255, 0.2);
+    }
 
-        .member img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
+    .member img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
 
-        .member img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
-        }
+    .member img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
+    }
 
-        .member-info h3 {
-            margin: 10px 0 5px;
-        }
+    .member-info h3 {
+      margin: 10px 0 5px;
+    }
 
-        .music {
-            margin-bottom: 30px;
-        }
+    .music {
+      margin-bottom: 30px;
+    }
 
-        .music img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.5s, box-shadow 0.5s;
-            box-shadow: 0 4px 15px rgba(180, 160, 255, 0.2);
-        }
+    .music img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.5s, box-shadow 0.5s;
+      box-shadow: 0 4px 15px rgba(180, 160, 255, 0.2);
+    }
 
-        .music img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
-        }
+    .music img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 200, 255, 0.3);
+    }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.2s ease, transform 1.2s ease;
-        }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        footer {
-            background-color: #1b1b2f;
-            color: #f3e8ff;
-            text-align: center;
-            padding: 20px;
-        }
+    footer {
+      background-color: #1b1b2f;
+      color: #f3e8ff;
+      text-align: center;
+      padding: 20px;
+    }
 
-        footer a {
-            color: #f3e8ff;
-            text-decoration: none;
-            margin: 0 5px;
-            font-size: 12px;
-        }
-        
-    </style>
+    footer a {
+      color: #f3e8ff;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 12px;
+    }
+  </style>
 </head>
-    
-<script>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="./images/Logo.jpg" alt="The Haldane Effect Logo" class="logo" />
+      <nav aria-label="Main Navigation">
+        <a href="#about" aria-label="About the band">About</a>
+        <a href="#music" aria-label="Our music">Music</a>
+        <a href="#events" aria-label="Upcoming events">Events</a>
+        <a href="#Merchandise" aria-label="Merchandise for sale">Merch</a>
+        <a href="#contact" aria-label="Contact the band">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about" class="fade-in">
+      <h2>About Us</h2>
+      <p>Welcome to the official website of The Haldane Effect! We are a Southampton-based indie band influenced by bands like Arctic Monkeys, The Smiths, and The Stone Roses.</p>
+      <p>We feel like we've built our own sound, we all love it and we hope you do too.</p>
+      <p>If you want to hear more, then it's just a short wait as we've got our debut album in the making right now!</p>
+      <p>We're here to be all yours, your lawfully wedded band, The Haldane Effect.</p>
+      <p style="font-size: 14px;">Meet the members:</p>
+
+      <div class="slider-wrapper" onmouseenter="pauseSlider()" onmouseleave="resumeSlider()">
+        <div class="slider" id="memberSlider">
+          <div class="member">
+            <img src="./images/member1.jpg" alt="Alex" />
+            <div class="member-info">
+              <h3>Alex</h3>
+              <p>Vocals / Guitar</p>
+            </div>
+          </div>
+          <div class="member">
+            <img src="./images/member2.jpg" alt="Jamie" />
+            <div class="member-info">
+              <h3>Jamie</h3>
+              <p>Lead Guitar</p>
+            </div>
+          </div>
+          <div class="member">
+            <img src="./images/member3.jpg" alt="Sam" />
+            <div class="member-info">
+              <h3>Sam</h3>
+              <p>Bass Guitar</p>
+            </div>
+          </div>
+          <div class="member">
+            <img src="./images/member4.jpg" alt="Liam" />
+            <div class="member-info">
+              <h3>Liam</h3>
+              <p>Drums</p>
+            </div>
+          </div>
+          <div class="member">
+            <img src="./images/member5.jpg" alt="Tom" />
+            <div class="member-info">
+              <h3>Tom</h3>
+              <p>Keyboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="fade-in">
+      <h2>Our Music</h2>
+      <div class="music">
+        <a href="https://open.spotify.com/album/1E582osqq3u3ivDno5omJZ" target="_blank"><img src="./images/Kookbox.jpg" alt="Kookbox Album Cover"></a>
+        <p>Kookbox - Album - 2024</p>
+      </div>
+      <!-- More music blocks... -->
+    </section>
+
+    <section id="events" class="fade-in">
+      <h2>Upcoming Events</h2>
+      <p>Christmas Show - 15th December</p>
+    </section>
+
+    <section id="Merchandise" class="fade-in">
+      <h2>Merchandise</h2>
+      <p>Kookbox CDs</p>
+      <a href="https://www.ebay.co.uk/itm/235806609565" target="_blank">For sale now!</a>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Contact Us</h2>
+      <p>Have any inquiries or want to talk business? Feel free to reach out to us via email or social media down below!</p>
+    </section>
+
+    <footer>
+      <a href="https://www.instagram.com/thehaldaneeffect" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@thehaldaneeffect" target="_blank">TikTok</a>
+      <a href="https://open.spotify.com/artist/11NQS9l2tySwdSnXzXiRXuyout" target="_blank">Spotify</a>
+      <a href="https://www.youtube.com/channel/UCpdP1RpYzWTalLq6zK6QXGA" target="_blank">YouTube</a>
+      <a href="mailto:thehaldaneeffect@gmail.com" target="_blank">Email</a>
+    </footer>
+  </div>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
     const slider = document.getElementById('memberSlider');
     let isPaused = false;
 
     function cloneSliderContent() {
-        slider.innerHTML += slider.innerHTML; // duplicate for infinite loop
+      slider.innerHTML += slider.innerHTML;
     }
 
     function autoScroll() {
-        if (isPaused) return;
-        slider.scrollLeft += 1;
-        if (slider.scrollLeft >= slider.scrollWidth / 2) {
-            slider.scrollLeft = 0;
-        }
+      if (isPaused) return;
+      slider.scrollLeft += 1;
+      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+        slider.scrollLeft = 0;
+      }
     }
 
     function pauseSlider() {
-        isPaused = true;
+      isPaused = true;
     }
 
     function resumeSlider() {
-        isPaused = false;
+      isPaused = false;
     }
 
-    cloneSliderContent(); // clone once on load
-    setInterval(autoScroll, 30); // slow scroll speed
-</script>
-
-<body>
-    <div class="container">
-        <header>
-            <img src="./images/Logo.jpg" alt="The Haldane Effect Logo" class="logo">
-            <nav aria-label="Main Navigation">
-                <a href="#about" aria-label="About the band">About</a>
-                <a href="#music" aria-label="Our music">Music</a>
-                <a href="#events" aria-label="Upcoming events">Events</a>
-                <a href="#Merchandise" aria-label="Merchandise for sale">Merch</a>
-                <a href="#contact" aria-label="Contact the band">Contact</a>
-            </nav>
-        </header>
-
-        <section id="about" class="fade-in">
-            <h2>About Us</h2>
-            <p>Welcome to the official website of The Haldane Effect! We are a Southampton-based indie band influenced by bands like Arctic Monkeys, The Smiths, and The Stone Roses.</p>
-            <p>Tired of everything we hear on the radio? Yearning for the return of real music, albums, physical releases, proper followings of proper bands?</p>
-            <p>We feel like we've built our own sound, we all love it and we hope you do too.</p>
-            <p>If you want to hear more, then it's just a short wait as we've got our debut album in the making right now!</p>
-            <p>This is what we are here to bring, we have more in stock with character, humor, and real people as your soundtrack. We're here to be all yours, your lawfully wedded band, The Haldane Effect.</p>
-        </section>
-
-        <!-- MEET THE BAND SLIDER -->
-        <div class="slider-wrapper" onmouseenter="pauseSlider()" onmouseleave="resumeSlider()">
-    <div class="slider" id="memberSlider">
-        <!-- Band members here -->
-    </div>
-</div>
-
-        <section class="fade-in">
-            <h2>Meet the Band</h2>
-            <div class="slider">
-                <div class="member">
-                    <img src="./images/member1.jpg" alt="Oliver Kedziora - Vocals/Rhythm Guitar">
-                    <div class="member-info">
-                        <h3>Oliver Kedziora</h3>
-                        <p>Lead Vocals/Rythym Guitar</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <img src="./images/member2.jpg" alt="Evelyn Eales - Lead Guitar">
-                    <div class="member-info">
-                        <h3>Evelyn Eales</h3>
-                        <p>Lead Guitar</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <img src="./images/member3.jpg" alt="Daniels Mareckis- Bass">
-                    <div class="member-info">
-                        <h3>Daniels Mareckis</h3>
-                        <p>Bass</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <img src="./images/IMG506.jpg" alt="Zakk White - Synth/Texture Guitar">
-                    <div class="member-info">
-                        <h3>Zakk White</h3>
-                        <p>Synth/Texture Guitar</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member">
-                    <img src="./images/member4.jpg" alt="Kacper Strupiechowski - Drums">
-                    <div class="member-info">
-                        <h3>Kacper Strupiechowski</h3>
-                        <p>Drums</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="music" class="fade-in">
-            <h2>Our Music</h2>
-            <div class="music">
-                <a href="https://open.spotify.com/album/1E582osqq3u3ivDno5omJZ" target="_blank"><img src="./images/Kookbox.jpg" alt="Kookbox Album Cover"></a>
-                <p>Kookbox - Album - 2024</p>
-            </div>
-            <div class="music">
-                <a href="https://open.spotify.com/track/7LdtFHIar5dearGQipnHHQ" target="_blank"><img src="./images/76.jpg" alt="76 Single Cover"></a>
-                <p>'76 - Single - 2024</p>
-            </div>
-            <div class="music">
-                <a href="https://open.spotify.com/track/6sSSEEmXc1nulz2yJgCowB" target="_blank"><img src="./images/Rachel.jpg" alt="Rachel Single Cover"></a>
-                <p>Rachel - Single - 2024</p>
-            </div>
-            <div class="music">
-                <a href="https://open.spotify.com/track/1e8g6F5GbN5sY0VCYAuSWG?si=0801c893181240ad" target="_blank"><img src="./images/TBAC.jpg" alt="Tower Block Single Cover"></a>
-                <p>Tower Block Around the Clock - Single - 2024</p>
-            </div>
-            <div class="music">
-                <a href="https://open.spotify.com/track/0EiKlOpNRhertxUziTvGsG" target="_blank"><img src="./images/Ciac.jpg" alt="Christmas is a Conspiracy Single Cover"></a>
-                <p>Christmas is a Conspiracy - Single - 2023</p>
-            </div>
-            <div class="music">
-                <a href="https://open.spotify.com/track/3JvnfgJqHVIasVk1TNJ4CI" target="_blank"><img src="./images/Forgotten.jpg" alt="Forgotten Single Cover"></a>
-                <p>Forgotten - Single - 2023</p>
-            </div>
-        </section>
-
-        <section id="events" class="fade-in">
-            <h2>Upcoming Events</h2>
-            <p>Christmas Show - 15th December</p>
-        </section>
-
-        <section id="Merchandise" class="fade-in">
-            <h2>Merchandise</h2>
-            <p>Kookbox CDs</p>
-            <a href="https://www.ebay.co.uk/itm/235806609565" target="_blank">For sale now!</a>
-        </section>
-
-        <section id="contact" class="fade-in">
-            <h2>Contact Us</h2>
-            <p>Have any inquiries or want to talk business? Feel free to reach out to us via email or social media down below!</p>
-        </section>
-
-        <footer>
-            <a href="https://www.instagram.com/thehaldaneeffect" target="_blank" aria-label="Follow us on Instagram">Instagram</a>
-            <a href="https://www.tiktok.com/@thehaldaneeffect" target="_blank" aria-label="Follow us on TikTok">TikTok</a>
-            <a href="https://open.spotify.com/artist/11NQS9l2tySwdSnXzXiRXuyout" target="_blank" aria-label="Listen to our music on Spotify">Spotify</a>
-            <a href="https://www.youtube.com/channel/UCpdP1RpYzWTalLq6zK6QXGA" target="_blank" aria-label="Watch our videos on YouTube">YouTube</a>
-            <a href="mailto:thehaldaneeffect@gmail.com" target="_blank" aria-label="Send us an email">Email</a>
-        </footer>
-    </div>
-
-    <script>
-        const fadeEls = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeEls.forEach(el => observer.observe(el));
-
-        // Auto-scroll slider with pause-on-hover
-        const slider = document.querySelector('.slider');
-        let scrollInterval;
-
-        function startAutoScroll() {
-            scrollInterval = setInterval(() => {
-                slider.scrollBy({ left: 1, behavior: 'smooth' });
-                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
-                    slider.scrollTo({ left: 0, behavior: 'smooth' });
-                }
-            }, 20);
-        }
-
-        function stopAutoScroll() {
-            clearInterval(scrollInterval);
-        }
-
-        slider.addEventListener('mouseenter', stopAutoScroll);
-        slider.addEventListener('mouseleave', startAutoScroll);
-
-        startAutoScroll();
-    </script>
+    cloneSliderContent();
+    setInterval(autoScroll, 30);
+  </script>
 </body>
 
 </html>
